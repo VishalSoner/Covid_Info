@@ -1,0 +1,224 @@
+/* 
+    Created on : 11 Apr, 2023, 12:31:58 PM
+    Author     : Vishal Soner
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: rgb(226, 226, 226);
+}
+nav{
+    position : sticky ;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    width: 80px;
+    background: #fff;
+    overflow: hidden;
+    transition: 1s;
+}
+nav:hover{
+    width: 12%;
+    transition: 0.5s;
+}
+.logo{
+    text-align: center;
+    display: flex;
+    margin: 10px 0 0 10px;
+    padding-bottom: 3rem;
+}
+
+.logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+a{
+    position: relative;
+    width: 280px;
+    font-size: 14px;
+    color: rgb(85, 83, 83);
+    display: table;
+    padding: 10px;
+    margin: auto;
+}
+
+nav .fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 0px;
+    font-size: 20px;
+    text-align: center;
+}
+.nav-item{
+    position: relative;
+    top: 0px;
+    margin-left: 0px;
+}
+a button:hover{
+    background: #eee;
+}
+a:hover i{
+    color: #34AF6D;
+    transition: 0.5s;
+}
+.logout{
+    position: absolute;
+    bottom: -3px;
+}
+
+.container{
+    display: flex;
+}
+
+/* MAin Section */
+.main{
+    position: relative;
+    /*padding: 10px;*/
+    width: 88%;
+}
+.main-top{
+    margin-left: 16px;
+    display: flex;
+    width: 100%;
+}
+.main-top h1{
+    box-shadow: 1px 1px 10px 3px #848484;
+    padding: 1px 10px 2px 10px;
+    border-top-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    margin-top: 8px;
+}
+
+.main-top i{
+    position: absolute;
+    right: 0;
+    margin: 10px 30px;
+    color: rgb(110, 109, 109);
+    cursor: pointer;
+}
+.main .users{
+    display: flex;
+    width: 107%;
+}
+.users .card{
+    width: 25%;
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 0px;
+    margin: 15px 10px 15px 15px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.users .card i{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;}
+
+.users .card img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.users .card h4{
+    text-transform: uppercase;
+}
+.users .card p{
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.users table{
+    margin:  auto;
+}
+.users .per span{
+    padding: 5px;
+    border-radius: 10px;
+    background: rgb(223, 223, 223);
+}
+.users td{
+    font-size: 14px;
+    padding-right: 15px;
+}
+.users .card button label{
+    padding : 10px , 0px;
+}
+.users .card button{
+    width: 100%;
+    margin-top: 8px;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #4AD489;
+}
+.users .card button:hover{
+    background: #4AD489;
+    color: #fff;
+    transition: 0.2s;
+}
+
+/*Attendance List serction  */
+.attendance{
+    margin-left: 15px;
+    text-transform: capitalize;
+    width: 105%;
+}
+.attendance-list{
+    width: 100%;
+    padding: 10px;
+    /*margin-top: 10px;*/
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.table{
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 15px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+table thead tr{
+    color: #fff;
+    background: #34AF6D;
+    text-align: left;
+    font-weight: bold;
+}
+.table th,
+.table td{
+    padding: 12px 15px;
+}
+.table tbody tr{
+    border-bottom: 1px solid #ddd;
+}
+.table tbody tr:nth-of-type(odd){
+    background: #f3f3f3;
+}
+.table tbody tr.active{
+    font-weight: bold;
+    color: #4AD489;
+}
+.table tbody tr:last-of-type{
+    border-bottom: 2px solid #4AD489;
+}
+

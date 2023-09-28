@@ -1,0 +1,210 @@
+/*
+    Created on : 8 Apr, 2023, 9:32:53 PM
+    Author     : Vishal Soner
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    font-size: 10x;
+}
+body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(../..//Images/Background/02_Registation.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container{
+    max-width: 560px;
+    width: 100%;
+    height: 98%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 30px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+    font-size: 23px;
+    font-weight: 500;
+    position: relative;
+    bottom: 12px;
+}
+.container .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.content form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px 0px -30px 0px;
+}
+form .user-details .input-box{
+    margin-bottom: 10px;
+    width: calc(100% / 2 - 15px);
+}
+form .input-box span.details{
+    display: block;
+    font-weight: 500;
+    /*  margin-bottom: 5px;
+      padding-top: 15px;*/
+}
+.user-details .input-box input{
+    height: 42px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    border-radius: 5px;
+    padding-left: 15px;
+    /*margin-top: 14px;*/
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #9b59b6;
+}
+
+.gender-details
+{
+    display: inline-block;
+    margin: 35px 30px -10px 0px;
+}
+
+form .gender-details .gender-title{
+    font-size: 18px;
+    font-weight: 500;
+}
+form .category{
+    display: flex;
+    width: 120%;
+    margin: 14px 0 ;
+    justify-content: space-between;
+    position: relative;
+    bottom: 40px;
+    left: 140px;
+}
+form .category label{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+form .category label .dot{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #d9d9d9;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    background: #9b59b6;
+    border-color: #d9d9d9;
+}
+form input[type="radio"]{
+    display: none;
+}
+
+form .button
+{
+    display: inline-block;
+    height: 45px;
+    width: 510px;
+    margin: -20px -277px 19px 12px;
+    /*padding: 0px 10px;*/
+    position: relative;
+    bottom: 15px;
+}
+
+form .button1
+{
+    display: block;
+    /*height: 45px;*/
+    text-align: center;
+    position: relative;
+    bottom: 25px;
+    left: 10px;
+}
+
+.button1 a
+{
+    padding-top: 10px; 
+    border: 1px solid black;
+    text-decoration: none;
+    height: 41px;
+    width: 495px;
+    display: inline-block;
+    margin: auto;
+    margin-left: -5px;
+}
+
+form .button input, a
+{
+    height: 100%;
+    width: 48%;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #5959b6);
+    /*background: linear-gradient(#71b7e6);*/
+}
+form .button1 a:hover
+{
+    background: linear-gradient(-135deg, #71b7e6, #5959b6);
+}
+form .button input:hover{
+    /* transform: scale(0.99); */
+    background: linear-gradient(-135deg, #71b7e6, #5959b6);
+}
+
+@media(max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .category{
+        width: 100%;
+    }
+    .content form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+        width: 5px;
+    }
+}
+@media(max-width: 459px){
+    .container .content .category{
+        flex-direction: column;
+    }
+}

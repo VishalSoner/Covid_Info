@@ -1,0 +1,330 @@
+CREATE DATABASE Covid;
+USE Covid;
+
+----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+
+** Super Admin **'
+
+Create TABLE Super_Admin
+(
+    Id int(100) NOT NULL Auto_Increment,
+    Gmail    varchar(50),
+    Password varchar(20),
+    Uname    varchar(20),
+    Address  varchar(20),
+    Mobile   varchar(20),
+    Email    varchar(20),
+    Gender   varchar(20),
+    Primary KEY(Id, Gmail)
+);
+
+
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| Id       | int         | NO   | PRI | NULL    | auto_increment |
+| Gmail    | varchar(50) | NO   | PRI | NULL    |                |
+| Password | varchar(20) | YES  |     | NULL    |                |
+| Uname    | varchar(20) | YES  |     | NULL    |                |
+| Address  | varchar(20) | YES  |     | NULL    |                |
+| Mobile   | varchar(20) | YES  |     | NULL    |                |
+| Email    | varchar(20) | YES  |     | NULL    |                |
+| Gender   | varchar(20) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+
+
+
+
+INSERT INTO Super_Admin(Gmail, Password, Uname, Address, Mobile, Email)
+VALUES
+('Aman@gmail.com',          'india' ,   'Aman Patel',     '72, Nand Vihar Rau', '9785461238',  'Male'),
+('Bhupendra@gmail.com',     'india' ,   'Bhupendra',      '72, Nand Vihar Rau', '9645879546',  'Male'),
+('Chandan123@gmail.com',    'india' ,   'Chandan',        '72, Nand Vihar Rau', '9644045048',  'Male'),
+('Dipendra123@gmail.com',   'india' ,   'Dipendra',       '72, Nand Vihar Rau', '9644008532',  'Male'),
+('EshuPatel23@gmail.com',   'india' ,   'EshUpate',       '72, Nand Vihar Rau', '8966861177',  'Male'),
+('Vishalrajput@gmail.com',  'india' ,   'VishalRajput',   '72, Nand Vihar Rau', '9926415516',  'Male'),
+('MayurSoner@gmail.com',    'india' ,   'MayurSoner',     '72, Nand Vihar Rau', '9399508087',  'Male'),
+('Vishalsoner@gmail.com',   'india' ,   'Vishalsoner',    '72, Nand Vihar Rau', '7987824608',  'Male');
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
+**State Admin
+Create Table State_admin
+(
+    Id int(100) NOT NULL Auto_Increment,
+    User_Id  varchar(20),
+    Password varchar(20),
+    State    varchar(20),
+    Uname    varchar(20),
+    Address  varchar(20),
+    Mobile   varchar(20),
+    Email    varchar(20),
+    Status   varchar(20),
+    Primary KEY(Id, User_Id)
+)
+
+
+**State Admin
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| User_Id  | varchar(20) | NO   | PRI | NULL    |       |
+| Password | varchar(20) | YES  |     | NULL    |       |
+| state    | varchar(20) | YES  |     | NULL    |       |
+| UName    | varchar(20) | YES  |     | NULL    |       |
+| Address  | varchar(20) | YES  |     | NULL    |       |
+| Mobile   | varchar(20) | YES  |     | NULL    |       |
+| EMail    | varchar(20) | YES  |     | NULL    |       |
+| status   | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+
+
+
+**State Admin
++---------+----------+-------+-----------+---------+------------+---------------------+----------+
+| User_Id | Password | state | UName     | Address | Mobile     | EMail               | status   |
++---------+----------+-------+-----------+---------+------------+---------------------+----------+
+| APUser  | ap       | AP    | NULL      | NULL    | NULL       | NULL                | disabled |
+| MPUser  | india    | MP    | Vishal    | Rau     | 7987824608 | Vishal@123gmail.com | enabled  |
+| RJUser  | india    | RJ    | Bhupendra | Betul   | 9876543210 | Bhupendra@gmail.com | enabled  |
+| UPUser  | india    | UP    | Aman      | Harda   | 7987211142 | aman123@gmail.com   | enabled  |
++---------+----------+-------+-----------+---------+------------+---------------------+----------+
+
+
+
+
+
+
+Insert Into State_admin( User_Id, Password, state, UName, Address, Mobile, EMail, status) 
+values
+( 'MPUser', 'india',  'MP', 'Vishal',     'Rau'   , '7987824608'  , 'Vishal@123gmail.com' , 'enabled'),
+( 'RJUser',  'india', 'RJ', 'Bhupendra',  'Betul' ,  '9876543210' , 'Bhupendra@gmail.com' , 'enabled '),
+( 'UPUser',  'india', 'UP', 'Aman     ',  'Harda' ,  '7987211142' , 'AmanSoner@gmail.com' , 'enabled ');
+
+
+
+----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
+** End User**'
+
+CREATE TABLE End_User
+(
+    Id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Name varchar(30),
+    DOB DATE,
+    EMail varchar(50),
+    Phone bigint,
+    City varchar(20),
+    Pin_Code int(10),
+    Address varchar(60),
+    Gender varchar(20),
+    Password varchar(65),
+    Today date,
+    Adhar_Card bigint
+);
+
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| Id         | int         | NO   | PRI | NULL    | auto_increment |
+| Name       | varchar(30) | YES  |     | NULL    |                |
+| DOB        | date        | YES  |     | NULL    |                |
+| EMail      | varchar(50) | YES  |     | NULL    |                |
+| Phone      | bigint      | YES  |     | NULL    |                |
+| City       | varchar(20) | YES  |     | NULL    |                |
+| Pin_Code   | int         | YES  |     | NULL    |                |
+| Address    | varchar(60) | YES  |     | NULL    |                |
+| Gender     | varchar(20) | YES  |     | NULL    |                |
+| Password   | varchar(65) | YES  |     | NULL    |                |
+| Today      | date        | YES  |     | NULL    |                |
+| Adhar_Card | bigint      | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+
+
+SELECT * FROM End_User;
++----+------+------------+---------------------------+------------+--------+----------+---------------------------+--------+----------+------------+------------+
+| Id | Name | DOB        | EMail                     | Phone      | City   | Pin_Code | Address                   | Gender | Password | Today      | Adhar_Card |
++----+------+------------+---------------------------+------------+--------+----------+---------------------------+--------+----------+------------+------------+
+|  1 | A    | 2023-08-26 | AmanPatel@gmail.com       | 9785461238 | Bhopal |   461441 | 72, Nand Vihar Colony Rau | Male   | india    | 2023-08-26 | 1111111111 |
+|  2 | B    | 2023-08-26 | Bhupendra@gmail.com       | 9645879546 | Indore |   461441 | 72, Nand Vihar Colony Rau | Female | india    | 2023-08-26 | 2222222222 |
+|  3 | C    | 2023-08-26 | Chandan12@gmail.com       | 9644045048 | Bhopal |   461441 | 72, Nand Vihar Colony Rau | Male   | india    | 2023-08-26 | 3333333333 |
+|  4 | D    | 2023-08-26 | Dipendra1@gmail.com       | 9644008532 | Harda  |   461441 | 72, Nand Vihar Colony Rau | Female | india    | 2023-08-26 | 4444444444 |
+|  5 | F    | 2023-08-26 | EshUpatel@gmail.com       | 9926415516 | Indore |   461441 | 72, Nand Vihar Colony Rau | Male   | india    | 2023-08-26 | 5555555555 |
+|  6 | G    | 2023-08-26 | vishalrajput@gmail.com    | 9399508087 | Harda  |   461441 | 72, Nand Vihar Colony Rau | Female | india    | 2023-08-26 | 6666666666 |
+|  7 | H    | 2023-08-26 | MayurSoner@gmail.com      | 8966861177 | Bhopal |   461441 | 72, Nand Vihar Colony Rau | Male   | india    | 2023-08-26 | 7777777777 |
+|  8 | I    | 2023-08-26 | vishalsoner7987@gmail.com | 7987824608 | Harda  |   461441 | 72, Nand Vihar Colony Rau | Female | india    | 2023-08-26 | 8888888888 |
+|  9 | J    | 2023-08-26 | vishalsoner7987@gmail.com | 7987824608 | Indore |   461441 | 72, Nand Vihar Colony Rau | male   | india    | 2023-08-26 | 9999999999 |
++----+------+------------+---------------------------+------------+--------+----------+---------------------------+--------+----------+------------+------------+
+
+
+INSERT INTO End_User(Name, DOB, EMail, Phone, City, Pin_Code,Address, Gender, Password, Today, Adhar_Card)VALUES
+('A', now(), 'AmanPatel@gmail.com', 	9785461238, 'Bhopal', 461441, '72, Nand Vihar Colony Rau', 'Male',   'india', now(), 1111111111),
+('B', now(), 'Bhupendra@gmail.com', 	9645879546, 'Indore', 461441, '72, Nand Vihar Colony Rau', 'Female', 'india', now(), 2222222222),
+('C', now(), 'Chandan12@gmail.com', 	9644045048, 'Bhopal', 461441, '72, Nand Vihar Colony Rau', 'Male',   'india', now(), 3333333333),
+('D', now(), 'Dipendra1@gmail.com',		9644008532, 'Harda',  461441, '72, Nand Vihar Colony Rau', 'Female', 'india', now(), 4444444444),
+('F', now(), 'EshUpatel@gmail.com', 	9926415516, 'Indore', 461441, '72, Nand Vihar Colony Rau', 'Male',   'india', now(), 5555555555),
+('G', now(), 'vishalrajput@gmail.com',	9399508087, 'Harda',  461441, '72, Nand Vihar Colony Rau', 'Female', 'india', now(), 6666666666),
+('H', now(), 'MayurSoner@gmail.com', 	8966861177, 'Bhopal', 461441, '72, Nand Vihar Colony Rau', 'Male',   'india', now(), 7777777777),
+('I', now(), 'vishalsoner@gmail.com',   7987824608, 'Harda',  461441, '72, Nand Vihar Colony Rau', 'Female', 'india', now(), 8888888888);
+
+
+INSERT INTO End_User(Name, DOB, EMail, Phone, City, Pin_Code, Address, Gender, Password, Today, Adhar_Card) 
+VALUES(?,?,?,?,?,?,?,?,?, now(),?)
+
+
+
+
+
+INSERT INTO End_User(Name, DOB, EMail, Phone, City)
+VALUES('A', now(), 'vishalsoner7987@gmail.com', 7987824608, 'Harda');
+
+INSERT INTO End_User(City, Pin_Code, Address, Gender, Password )
+VALUES( 461441, '72, Nand Vihar Colony Rau', 'on', 'india');
+
+
+
+//INSERT INTO End_User (Name, password) VALUES ('Vishal', PASSWORD('password123'));
+
+
+INSERT INTO End_User (Name, password) VALUES ('Vishal',  SHA2('Vishal Soner', 256));
+SELECT SHA2('password123', 256);
+
+INSERT INTO End_User (Name, password) VALUES ('Mohit', aes_decrypt('password', 'key') );
+SELECT aes_decrypt(password, 'key') FROM End_User;
+SELECT SHA2('password123', 256);
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+** Covid_info **
+
+CREATE TABLE Covid_info
+(
+    Id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Data_Date date,
+    State varchar(20),
+    Total_Cases int(10),
+	Total_Death int(10),
+	Total_Active int(10),
+	Total_Recover int(10),
+    User_id varchar(20)
+);
+
+
+
+
+INSERT INTO Covid_info(Data_Date, State, Total_Cases, Total_Death, Total_Active, Total_Recover, User_Id) VALUES 
+(  "2023-08-01" , 'UP', 64345, 1546, 1541, 4345, 'UPUser'),
+(  "2023-08-02" , 'MH', 98545, 5426, 2781, 8545, 'MHUser'),
+(  "2023-08-03" , 'RJ', 75485, 6466, 3744, 5485, 'RJUser'),
+(  "2023-08-04" , 'AJ', 9486, 9546, 4743, 7845,  'AJUser'),
+(  "2023-08-05" , 'PJ', 7154, 7566, 5798, 6541,  'PJUser'),
+(  "2023-08-06" , 'UP', 6345, 1546, 1541, 4345,  'UPUser'),
+(  "2023-08-07" , 'MH', 945,  5426, 2781, 8545,  'MHUser'),
+(  "2023-08-08" , 'RJ', 7485, 6466, 3744, 5485,  'RJUser'),
+(  "2023-08-09" , 'UP', 6345, 1546, 1541, 4345,  'UPUser'),
+(  "2023-08-10" , 'MH', 9545, 5426, 2781, 8545,  'MHUser'),
+(  "2023-08-11" , 'RJ', 7485, 6466, 3744, 5485,  'RJUser'),
+(  "2023-08-12" , 'AJ', 9486, 9546, 4743, 7845,  'AJUser'),
+(  "2023-08-13" , 'PJ', 7154, 7566, 5798, 6541,  'PJUser'),
+(  "2023-08-14" , 'AJ', 9486, 9546, 4743, 7845,  'AJUser'),
+(  "2023-08-15" , 'PJ', 7154, 7566, 5798, 6541,  'PJUser'),
+(  "2023-08-16" , 'CH', 7984, 9468, 6795, 8456,  'CHUser'),
+(  "2023-08-17" , 'MH', 9545, 5426, 2781, 8545,  'MHUser'),
+(  "2023-08-18" , 'RJ', 7485, 6466, 3744, 5485,  'RJUser'),
+(  "2023-08-19" , 'AJ', 9486, 9546, 4743, 7845,  'AJUser'),
+(  "2023-08-20" , 'PJ', 7154, 7566, 5798, 6541,  'PJUser'),
+(  "2023-08-21" , 'AJ', 9486, 9546, 4743, 7845,  'AJUser'),
+(  "2023-08-22" , 'PJ', 7154, 7566, 5798, 6541,  'PJUser'),
+(  "2023-08-23" , 'CH', 7984, 9468, 6795, 8456,  'CHUser'); 
+
+
+
+Update covid_info Set Total_Cases=100000, Total_Active=10000, Total_Death=1000, Total_Recover=100 where Data_Date="2023-08-23" AND State="CH" AND User_Id="CHUser";
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+
+ insert into Covid_info (Recovery) values
+ (1000),
+ (2000),
+ (3000),
+ (4000),
+ (5000),
+ (6000),
+ (7000),
+ (8000),
+ (9000),
+ (10000),
+ (11000);
+ (12000);
+
+
+
+
+
+
+
+Update covid_info Set Recovery=1000 where Sno= 1;
+Update covid_info Set Recovery=2000 where Sno= 2;
+Update covid_info Set Recovery=3000 where Sno= 3;
+Update covid_info Set Recovery=4000 where Sno= 4;
+Update covid_info Set Recovery=5000 where Sno= 5;
+Update covid_info Set Recovery=6000 where Sno= 6;
+Update covid_info Set Recovery=7000 where Sno= 7;
+Update covid_info Set Recovery=8000 where Sno= 8;
+Update covid_info Set Recovery=9000 where Sno= 9;
+Update covid_info Set Recovery=10000 whereSno = 10;
+Update covid_info Set Recovery=11000 whereSno = 19;
+Update covid_info Set Recovery=12000 whereSno = 12;
+Update covid_info Set Recovery=13000 whereSno = 13;
+
+
+Update covid_info Set total=?, active=?, deaths=?, Recovery=?   
+where Sno = (select Max(Sno) from Covid_info where state='MP' AND User_Id='MPUser)'
+
+Update covid_info Set total=100000, active=10000, deaths=20000, Recovery=30000   
+where select Max(Sno) from Covid_info where state='MP' AND User_Id='MPUser';
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Insert Into Covid_info(idata, state, total, active, deaths, Recovery, User_Id) VALUES
+(now(), 'MH', 12347, 987, 7456, 78895, 'MHUser');
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
